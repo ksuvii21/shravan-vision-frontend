@@ -61,7 +61,7 @@ export default function Navbar() {
     { name: 'Home', path: '/' },
     { name: 'Translation', path: '/translation' },
     { name: 'Accessibility', path: '/accessibility' },
-    { name: 'Live Calls', path: '/livecalls' },
+    { name: 'SOS', path: '/sos' },
     { name: 'AR Learning', path: '/arlearning' },
     { name: 'About & Impact', path: '/aboutimpact' },
     // Admin Panel tab will be conditionally rendered below
@@ -73,7 +73,7 @@ export default function Navbar() {
   const bottomNavItems = [
     { name: 'Home', path: '/', icon: '🏠' },
     { name: 'Translation', path: '/translation', icon: '🌐' },
-    { name: 'Live Calls', path: '/livecalls', icon: '📞' },
+    { name: 'SOS', path: '/sos', icon: '🆘' },
     { name: 'AR Learning', path: '/arlearning', icon: '🎓' },
   ]
 

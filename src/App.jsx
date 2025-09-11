@@ -18,6 +18,7 @@ const Contact = lazy(() => import('./pages/Contact'))
 const Login = lazy(() => import('./pages/Login'))
 const Settings = lazy(() => import('./pages/Settings'))
 const NotFound = lazy(() => import('./pages/NotFound'))
+const SOS = lazy(() => import('./pages/SOS'))
 
 // AnimatePresence wrapper for route transitions
 function AnimatedRoutes() {
@@ -80,6 +81,11 @@ function AnimatedRoutes() {
         <Route path="*" element={
           <Suspense fallback={<div className="flex items-center justify-center min-h-screen">Loading...</div>}>
             <NotFound />
+          </Suspense>
+        } />
+        <Route path="/sos" element={
+          <Suspense fallback={<div className="flex items-center justify-center min-h-screen">Loading...</div>}>
+            <SOS />
           </Suspense>
         } />
       </Routes>

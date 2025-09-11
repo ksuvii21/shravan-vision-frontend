@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import { useState } from 'react';
 
 // Animation variants
 const containerVariants = {
@@ -30,6 +31,7 @@ const itemVariants = {
 
 function Home() {
   const navigate = useNavigate();
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
   return (
     <motion.div
@@ -86,6 +88,47 @@ function Home() {
         <h2 className="text-3xl font-bold mb-8">Key Features</h2>
         <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           <motion.div
+            className="cursor-pointer p-6 border border-gray-200 dark:border-gray-700 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white flex flex-col h-full"
+            whileHover={{ y: -5, transition: { duration: 0.2 } }}
+          >
+            <div className="flex-grow">
+              <div className="mb-4 text-red-600 dark:text-red-400">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 5.636l-1.414 1.414M12 2v4M5.636 5.636L7.05 7.05M2 12h4m12 0h4m-2.05-4.95l1.414 1.414M12 18v4m-4.95-2.05l1.414-1.414M6 12a6 6 0 1112 0 6 6 0 01-12 0z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Emergency SOS</h3>
+              <p>Quick gesture-based emergency alert for immediate assistance. Connects to emergency services, notifies contacts, and provides location tracking for rapid response in critical situations.</p>
+            </div>
+            <div className="mt-4 flex flex-col gap-2">
+              <button
+                onClick={() => alert('Emergency SOS triggered! Assistance is on the way.')}
+                className="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors"
+              >
+                Trigger SOS
+              </button>
+              <div className="relative">
+                <button
+                  onClick={() => setDropdownOpen(!dropdownOpen)}
+                  className="bg-gray-600 hover:bg-gray-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors w-full"
+                >
+                  More Options ▼
+                </button>
+                {dropdownOpen && (
+                  <div className="absolute top-full left-0 right-0 mt-1 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg shadow-lg z-10">
+                    <button
+                      onClick={() => { navigate('/livecalls'); setDropdownOpen(false); }}
+                      className="block w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 text-gray-900 dark:text-white"
+                    >
+                      Live Calls
+                    </button>
+                  </div>
+                )}
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.div
             onClick={() => navigate('/translation')}
             className="cursor-pointer p-6 border border-gray-200 dark:border-gray-700 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white flex flex-col h-full"
             whileHover={{ y: -5, transition: { duration: 0.2 } }}
@@ -103,28 +146,7 @@ function Home() {
               Get Started
             </button>
           </motion.div>
-          
-          <motion.div
-            className="cursor-pointer p-6 border border-gray-200 dark:border-gray-700 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white flex flex-col h-full"
-            whileHover={{ y: -5, transition: { duration: 0.2 } }}
-          >
-            <div className="flex-grow">
-              <div className="mb-4 text-red-600 dark:text-red-400">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 5.636l-1.414 1.414M12 2v4M5.636 5.636L7.05 7.05M2 12h4m12 0h4m-2.05-4.95l1.414 1.414M12 18v4m-4.95-2.05l1.414-1.414M6 12a6 6 0 1112 0 6 6 0 01-12 0z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Emergency SOS</h3>
-              <p>Quick gesture-based emergency alert for immediate assistance.</p>
-            </div>
-            <button
-              onClick={() => alert('Emergency SOS triggered! Assistance is on the way.')}
-              className="mt-4 bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors"
-            >
-              Trigger SOS
-            </button>
-          </motion.div>
-          
+
           <motion.div
             onClick={() => navigate('/arlearning')}
             className="cursor-pointer p-6 border border-gray-200 dark:border-gray-700 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white flex flex-col h-full"
