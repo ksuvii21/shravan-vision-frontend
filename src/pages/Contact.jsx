@@ -32,7 +32,7 @@ function Contact() {
               value={formData.name}
               onChange={handleChange}
               required
-              className="w-full p-3 rounded bg-white dark:bg-gray-700 text-gray-900 dark:text-white border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full p-3 rounded bg-white dark:bg-gray-700 text-gray-900 dark:text-white border border-gray-400 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Enter your name"
             />
           </div>
@@ -45,7 +45,7 @@ function Contact() {
               value={formData.email}
               onChange={handleChange}
               required
-              className="w-full p-3 rounded bg-white dark:bg-gray-700 text-gray-900 dark:text-white border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full p-3 rounded bg-white dark:bg-gray-700 text-gray-900 dark:text-white border border-gray-400 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Enter your email"
             />
           </div>
@@ -58,7 +58,7 @@ function Contact() {
               onChange={handleChange}
               required
               rows="5"
-              className="w-full p-3 rounded bg-white dark:bg-gray-700 text-gray-900 dark:text-white border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full p-3 rounded bg-white dark:bg-gray-700 text-gray-900 dark:text-white border border-gray-400 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Enter your message"
             />
           </div>

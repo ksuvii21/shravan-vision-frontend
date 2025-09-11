@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import { lazy, Suspense } from 'react'
 import { AnimatePresence } from 'framer-motion'
 import Navbar from './components/Navbar'
+import Footer from './components/Footer'
 
 // Eagerly loaded components
 import Home from './pages/Home'
@@ -84,11 +85,12 @@ function AnimatedRoutes() {
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
+      <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300 flex flex-col">
         <Navbar />
-        <main className="p-4">
+        <main className="flex-grow p-4">
           <AnimatedRoutes />
         </main>
+        <Footer />
       </div>
     </Router>
   )

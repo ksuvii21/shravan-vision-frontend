@@ -1,8 +1,10 @@
 import { useState, useEffect, useRef } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
+import { useAuth } from '../context/AuthContext'
 
 export default function Navbar() {
+  const { isAdmin, user, logout } = useAuth()
   const [darkMode, setDarkMode] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const location = useLocation()
@@ -62,6 +64,7 @@ export default function Navbar() {
     { name: 'Live Calls', path: '/livecalls' },
     { name: 'AR Learning', path: '/arlearning' },
     { name: 'About & Impact', path: '/aboutimpact' },
+    // Admin Panel tab will be conditionally rendered below
     { name: 'Admin Panel', path: '/adminpanel' },
     { name: 'Contact', path: '/contact' },
   ]
@@ -84,28 +87,33 @@ export default function Navbar() {
               <Link to="/">Shravan Vision</Link>
             </motion.div>
             <div className="hidden md:ml-6 md:flex md:space-x-4 md:items-center">
-              {navLinks.map((link) => (
-                <motion.button
-                  key={link.name}
-                  onClick={() => handleNavClick(link.path)}
-                  className={`inline-flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors ${
-                    location.pathname === link.path
-                      ? 'bg-pink-100 dark:bg-pink-900 text-pink-700 dark:text-pink-300'
-                      : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'
-                  }`}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  {link.name}
-                </motion.button>
-              ))}
+              {navLinks.map((link) => {
+                if (link.name === 'Admin Panel' && !isAdmin()) {
+                  return null
+                }
+                return (
+                  <motion.button
+                    key={link.name}
+                    onClick={() => handleNavClick(link.path)}
+                    className={`inline-flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors ${
+                      location.pathname === link.path
+                        ? 'bg-gradient-to-r from-pink-400 to-pink-600 text-white dark:from-pink-700 dark:to-pink-900'
+                        : 'text-gray-700 dark:text-gray-300 hover:bg-pink-100 dark:hover:bg-pink-800'
+                    }`}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    {link.name}
+                  </motion.button>
+                )
+              })}
             </div>
           </div>
 
           <div className="flex items-center space-x-2 md:space-x-4">
             <motion.button
               onClick={toggleDarkMode}
-              className="p-2 rounded-full text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none"
+              className="p-2 rounded-full text-gray-600 dark:text-gray-300 hover:bg-pink-100 dark:hover:bg-pink-800 focus:outline-none"
               aria-label="Toggle Dark Mode"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
@@ -126,70 +134,65 @@ export default function Navbar() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Link
-                to="/login"
-                className="bg-pink-600 hover:bg-pink-700 text-white font-medium py-2 px-4 rounded-md transition-colors"
-              >
-                Login
-              </Link>
+              {user ? (
+                <button
+                  onClick={async () => {
+                    await logout();
+                    navigate('/login');
+                  }}
+                  className="bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-4 rounded-md transition-colors"
+                >
+                  Logout
+                </button>
+              ) : (
+                <Link
+                  to="/login"
+                  className="bg-pink-600 hover:bg-pink-700 text-white font-medium py-2 px-4 rounded-md transition-colors"
+                >
+                  Login
+                </Link>
+              )}
             </motion.div>
-
-            {/* Mobile menu button */}
-            <div className="flex md:hidden">
-              <button
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="inline-flex items-center justify-center p-2 rounded-md text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none"
-                aria-expanded="false"
-              >
-                <span className="sr-only">Open main menu</span>
-                {isMenuOpen ? (
-                  <svg className="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                ) : (
-                  <svg className="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
-                  </svg>
-                )}
-              </button>
-            </div>
           </div>
         </div>
       </div>
 
-      {/* Mobile menu */}
-      {isMenuOpen && (
-        <motion.div
-          className="md:hidden"
-          ref={menuRef}
-          initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: 1, height: 'auto' }}
-          exit={{ opacity: 0, height: 0 }}
-          transition={{ duration: 0.2 }}
-        >
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white dark:bg-gray-900 shadow-lg rounded-b-lg">
-            {navLinks.map((link) => (
+      {/* Mobile tab bar */}
+      <div className="fixed bottom-0 left-0 right-0 bg-white dark:bg-gray-900 shadow-inner border-t border-gray-200 dark:border-gray-700 md:hidden z-50">
+        <div className="flex justify-around">
+          {navLinks.map((link) => {
+            if (link.name === 'Admin Panel' && !isAdmin()) {
+              return null
+            }
+            return (
               <button
                 key={link.name}
                 onClick={() => handleNavClick(link.path)}
-                className={`block w-full text-left px-3 py-2 rounded-md text-base font-medium ${
+                className={`flex flex-col items-center justify-center py-2 text-xs font-medium w-full transition-colors ${
                   location.pathname === link.path
-                    ? 'bg-pink-100 dark:bg-pink-900 text-pink-700 dark:text-pink-300'
-                    : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'
+                    ? 'bg-gradient-to-r from-pink-400 to-pink-600 text-white dark:from-pink-700 dark:to-pink-900'
+                    : 'text-gray-500 dark:text-gray-400 hover:bg-pink-100 dark:hover:bg-pink-800'
                 }`}
               >
+                {/* Placeholder for icons - can be replaced with actual icons */}
+                <svg
+                  className="w-6 h-6 mb-1"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  viewBox="0 0 24 24"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M12 8v4l3 3" />
+                </svg>
                 {link.name}
               </button>
-            ))}
-            <Link
-              to="/login"
-              className="block w-full text-center mt-3 bg-pink-600 hover:bg-pink-700 text-white font-medium py-2 px-4 rounded-md transition-colors"
-            >
-              Login
-            </Link>
-          </div>
-        </motion.div>
-      )}
+            )
+          })}
+        </div>
+      </div>
     </nav>
   )
 }

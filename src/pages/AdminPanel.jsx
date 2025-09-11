@@ -1,10 +1,12 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import { useAuth } from '../context/AuthContext';
 
 function AdminPanel() {
-  const { user, isAdmin, logout } = useAuth();
+  const { isAdmin, logout } = useAuth();
+  const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState('dashboard');
   const [stats, setStats] = useState({
     totalUsers: 0,
@@ -309,7 +311,14 @@ function AdminPanel() {
 
               <div className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
                 <button
-                  onClick={logout}
+                  onClick={async () => {
+                    const result = await logout();
+                    if (result.success) {
+                      navigate('/login');
+                    } else {
+                      alert('Logout failed: ' + result.error);
+                    }
+                  }}
                   className="w-full flex items-center px-3 py-2 text-sm font-medium text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900 rounded-md transition-colors"
                 >
                   <span className="mr-3">🚪</span>

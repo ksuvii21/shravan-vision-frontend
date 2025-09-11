@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import { useAuth } from '../context/AuthContext';
+import LoadingSpinner from '../components/LoadingSpinner';
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -46,6 +47,8 @@ function Login() {
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.5 }}
       className="min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-50 to-pink-50 dark:from-gray-900 dark:to-gray-800 py-12 px-4 sm:px-6 lg:px-8"
+      role="main"
+      aria-labelledby="login-title"
     >
       <Helmet>
         <title>Login | Shravan Vision</title>
@@ -103,7 +106,7 @@ function Login() {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm placeholder-gray-400 dark:placeholder-gray-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-pink-500 focus:border-pink-500"
+                className="mt-1 block w-full px-3 py-2 border border-gray-400 dark:border-gray-600 rounded-md shadow-sm placeholder-gray-600 dark:placeholder-gray-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-pink-500 focus:border-pink-500"
                 placeholder="Enter your email"
               />
             </div>
@@ -120,7 +123,7 @@ function Login() {
                 required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm placeholder-gray-400 dark:placeholder-gray-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-pink-500 focus:border-pink-500"
+                className="mt-1 block w-full px-3 py-2 border border-gray-400 dark:border-gray-600 rounded-md shadow-sm placeholder-gray-600 dark:placeholder-gray-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-pink-500 focus:border-pink-500"
                 placeholder="Enter your password"
               />
             </div>
@@ -134,7 +137,14 @@ function Login() {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
-              {loading ? 'Signing in...' : 'Sign in'}
+              {loading ? (
+                <div className="flex items-center justify-center">
+                  <LoadingSpinner size="sm" color="pink" />
+                  <span className="ml-2">Signing in...</span>
+                </div>
+              ) : (
+                'Sign in'
+              )}
             </motion.button>
 
             <div className="text-center">
