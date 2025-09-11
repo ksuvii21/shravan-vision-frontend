@@ -69,6 +69,21 @@ export default function Navbar() {
     { name: 'Contact', path: '/contact' },
   ]
 
+  // Bottom navigation items for mobile (always visible)
+  const bottomNavItems = [
+    { name: 'Home', path: '/', icon: '🏠' },
+    { name: 'Translation', path: '/translation', icon: '🌐' },
+    { name: 'Live Calls', path: '/livecalls', icon: '📞' },
+    { name: 'AR Learning', path: '/arlearning', icon: '🎓' },
+  ]
+
+  // Dropdown items for mobile (accessed via hamburger menu)
+  const dropdownItems = [
+    { name: 'Accessibility', path: '/accessibility' },
+    { name: 'About & Impact', path: '/aboutimpact' },
+    { name: 'Contact', path: '/contact' },
+  ]
+
   const handleNavClick = (path) => {
     navigate(path)
   }
@@ -159,38 +174,60 @@ export default function Navbar() {
 
       {/* Mobile tab bar */}
       <div className="fixed bottom-0 left-0 right-0 bg-white dark:bg-gray-900 shadow-inner border-t border-gray-200 dark:border-gray-700 md:hidden z-50">
-        <div className="flex justify-around">
-          {navLinks.map((link) => {
-            if (link.name === 'Admin Panel' && !isAdmin()) {
-              return null
-            }
-            return (
-              <button
-                key={link.name}
-                onClick={() => handleNavClick(link.path)}
-                className={`flex flex-col items-center justify-center py-2 text-xs font-medium w-full transition-colors ${
-                  location.pathname === link.path
-                    ? 'bg-gradient-to-r from-pink-400 to-pink-600 text-white dark:from-pink-700 dark:to-pink-900'
-                    : 'text-gray-500 dark:text-gray-400 hover:bg-pink-100 dark:hover:bg-pink-800'
-                }`}
+        <div className="flex justify-around items-center">
+          {bottomNavItems.map((item) => (
+            <button
+              key={item.name}
+              onClick={() => handleNavClick(item.path)}
+              className={`flex flex-col items-center justify-center py-2 text-xs font-medium w-full transition-colors ${
+                location.pathname === item.path
+                  ? 'bg-gradient-to-r from-pink-400 to-pink-600 text-white dark:from-pink-700 dark:to-pink-900'
+                  : 'text-gray-500 dark:text-gray-400 hover:bg-pink-100 dark:hover:bg-pink-800'
+              }`}
+            >
+              <span className="mb-1">{item.icon}</span>
+              {item.name}
+            </button>
+          ))}
+
+          {/* Hamburger menu for dropdown */}
+          <div className="relative" ref={menuRef}>
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="flex flex-col items-center justify-center py-2 text-xs font-medium w-full text-gray-500 dark:text-gray-400 hover:bg-pink-100 dark:hover:bg-pink-800"
+              aria-label="Open menu"
+            >
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                viewBox="0 0 24 24"
               >
-                {/* Placeholder for icons - can be replaced with actual icons */}
-                <svg
-                  className="w-6 h-6 mb-1"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  viewBox="0 0 24 24"
-                >
-                  <circle cx="12" cy="12" r="10" />
-                  <path d="M12 8v4l3 3" />
-                </svg>
-                {link.name}
-              </button>
-            )
-          })}
+                <path d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+              Menu
+            </button>
+
+            {isMenuOpen && (
+              <div className="absolute bottom-12 right-0 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-md shadow-lg w-48 z-50">
+                {dropdownItems.map((item) => (
+                  <button
+                    key={item.name}
+                    onClick={() => {
+                      handleNavClick(item.path)
+                      setIsMenuOpen(false)
+                    }}
+                    className={`block w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-pink-100 dark:hover:bg-pink-700`}
+                  >
+                    {item.name}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </nav>

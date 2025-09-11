@@ -105,21 +105,23 @@ function Home() {
           </motion.div>
           
           <motion.div
-            onClick={() => navigate('/livecalls')}
             className="cursor-pointer p-6 border border-gray-200 dark:border-gray-700 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white flex flex-col h-full"
             whileHover={{ y: -5, transition: { duration: 0.2 } }}
           >
             <div className="flex-grow">
-              <div className="mb-4 text-pink-600 dark:text-pink-400">
+              <div className="mb-4 text-red-600 dark:text-red-400">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 5.636l-1.414 1.414M12 2v4M5.636 5.636L7.05 7.05M2 12h4m12 0h4m-2.05-4.95l1.414 1.414M12 18v4m-4.95-2.05l1.414-1.414M6 12a6 6 0 1112 0 6 6 0 01-12 0z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold mb-2">Live Video Calls</h3>
-              <p>Connect with interpreters for real-time sign-to-sign communication.</p>
+              <h3 className="text-xl font-semibold mb-2">Emergency SOS</h3>
+              <p>Quick gesture-based emergency alert for immediate assistance.</p>
             </div>
-            <button className="mt-4 bg-pink-600 hover:bg-pink-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors">
-              Start Call
+            <button
+              onClick={() => alert('Emergency SOS triggered! Assistance is on the way.')}
+              className="mt-4 bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors"
+            >
+              Trigger SOS
             </button>
           </motion.div>
           

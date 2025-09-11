@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
-import { lazy, Suspense } from 'react'
+import { lazy, Suspense, useEffect } from 'react'
 import { AnimatePresence } from 'framer-motion'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
@@ -22,7 +22,12 @@ const NotFound = lazy(() => import('./pages/NotFound'))
 // AnimatePresence wrapper for route transitions
 function AnimatedRoutes() {
   const location = useLocation()
-  
+
+  // Scroll to top when route changes
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [location.pathname])
+
   return (
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
