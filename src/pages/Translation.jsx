@@ -193,14 +193,14 @@ function Translation() {
           </div>
 
           <div className="mt-4 text-center">
-            <motion.button
-              onClick={handleTranslate}
-              className="bg-pink-600 hover:bg-pink-700 text-white font-semibold py-2 px-6 rounded-lg transition-colors"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Translate
-            </motion.button>
+              <motion.button
+                onClick={handleTranslate}
+                className="bg-primary-600 hover:bg-primary-700 text-white font-semibold py-2 px-6 rounded-lg transition-colors"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Translate
+              </motion.button>
           </div>
 
           {translatedText && (

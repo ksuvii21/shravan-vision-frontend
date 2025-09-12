@@ -17,16 +17,16 @@ function Footer() {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
             >
-              <h3 className="text-2xl font-bold text-pink-400">Shravan Vision</h3>
+              <h3 className="text-2xl font-bold text-primary-400">Shravan Vision</h3>
             </motion.div>
-            <p className="text-gray-300 mb-4 max-w-md">
+            <p className="text-gray-700 dark:text-gray-300 mb-4 max-w-md">
               Empowering accessibility through innovative vision technology.
               Making the world more inclusive for everyone, regardless of hearing ability.
             </p>
             <div className="flex space-x-4">
               <a
                 href="#"
-                className="text-gray-400 hover:text-pink-400 transition-colors"
+                className="text-gray-700 dark:text-gray-400 hover:text-primary-500 transition-colors duration-300 ease-in-out"
                 aria-label="Facebook"
               >
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -35,7 +35,7 @@ function Footer() {
               </a>
               <a
                 href="#"
-                className="text-gray-400 hover:text-pink-400 transition-colors"
+                className="text-gray-700 dark:text-gray-400 hover:text-primary-500 transition-colors duration-300 ease-in-out"
                 aria-label="Twitter"
               >
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -44,7 +44,7 @@ function Footer() {
               </a>
               <a
                 href="#"
-                className="text-gray-400 hover:text-pink-400 transition-colors"
+                className="text-gray-700 dark:text-gray-400 hover:text-primary-500 transition-colors duration-300 ease-in-out"
                 aria-label="LinkedIn"
               >
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -59,27 +59,27 @@ function Footer() {
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li>
-                <Link to="/" className="text-gray-300 hover:text-pink-400 transition-colors">
+                <Link to="/" className="text-gray-300 hover:text-primary-500 transition-colors duration-300 ease-in-out">
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/translation" className="text-gray-300 hover:text-pink-400 transition-colors">
+                <Link to="/translation" className="text-gray-300 hover:text-primary-500 transition-colors duration-300 ease-in-out">
                   Translation
                 </Link>
               </li>
               <li>
-                <Link to="/accessibility" className="text-gray-300 hover:text-pink-400 transition-colors">
+                <Link to="/accessibility" className="text-gray-300 hover:text-primary-500 transition-colors duration-300 ease-in-out">
                   Accessibility
                 </Link>
               </li>
               <li>
-                <Link to="/aboutimpact" className="text-gray-300 hover:text-pink-400 transition-colors">
+                <Link to="/aboutimpact" className="text-gray-300 hover:text-primary-500 transition-colors duration-300 ease-in-out">
                   About & Impact
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="text-gray-300 hover:text-pink-400 transition-colors">
+                <Link to="/contact" className="text-gray-300 hover:text-primary-500 transition-colors duration-300 ease-in-out">
                   Contact
                 </Link>
               </li>
@@ -91,27 +91,27 @@ function Footer() {
             <h4 className="text-lg font-semibold mb-4">Support</h4>
             <ul className="space-y-2">
               <li>
-                <Link to="/contact" className="text-gray-300 hover:text-pink-400 transition-colors">
+                <Link to="/contact" className="text-gray-300 hover:text-primary-500 transition-colors duration-300 ease-in-out">
                   Help Center
                 </Link>
               </li>
               <li>
-                <a href="/faq" className="text-gray-300 hover:text-pink-400 transition-colors">
+                <a href="/faq" className="text-gray-300 hover:text-primary-500 transition-colors duration-300 ease-in-out">
                   FAQ
                 </a>
               </li>
               <li>
-                <a href="/user-guide.pdf" className="text-gray-300 hover:text-pink-400 transition-colors">
+                <a href="/user-guide.pdf" className="text-gray-300 hover:text-primary-500 transition-colors duration-300 ease-in-out">
                   User Guide
                 </a>
               </li>
               <li>
-                <a href="/feedback" className="text-gray-300 hover:text-pink-400 transition-colors">
+                <a href="/feedback" className="text-gray-300 hover:text-primary-500 transition-colors duration-300 ease-in-out">
                   Feedback
                 </a>
               </li>
               <li>
-                <a href="mailto:support@shravanvision.com" className="text-gray-300 hover:text-pink-400 transition-colors">
+                <a href="mailto:support@shravanvision.com" className="text-gray-300 hover:text-primary-500 transition-colors duration-300 ease-in-out">
                   support@shravanvision.com
                 </a>
               </li>

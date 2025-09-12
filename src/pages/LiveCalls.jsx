@@ -63,46 +63,46 @@ function LiveCalls() {
   };
 
   return (
-    <div className="p-4 max-w-6xl mx-auto bg-gradient-to-br from-purple-50 via-pink-50 to-yellow-100 dark:from-purple-900 dark:via-pink-900 dark:to-yellow-900 rounded-xl shadow-lg">
-      <h1 className="text-3xl font-bold mb-4 text-purple-800 dark:text-purple-200">Live Calls</h1>
-      <p className="mb-4 text-gray-700 dark:text-gray-300">
+    <div className="p-4 max-w-6xl mx-auto bg-white dark:bg-gray-800 rounded-xl shadow-lg">
+      <h1 className="text-3xl font-bold mb-4 text-gray-900 dark:text-white">Live Calls</h1>
+      <p className="mb-4 text-gray-700 dark:text-gray-200">
         WebRTC-based live calls functionality (basic implementation).
       </p>
 
       {/* Video Section - Compact Layout */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-        <div className="bg-white dark:bg-purple-900 p-4 rounded-lg shadow-md">
-          <h2 className="font-semibold mb-2 text-purple-900 dark:text-purple-200">Local Video</h2>
-          <video ref={localVideoRef} autoPlay muted className="w-full h-48 object-cover rounded border border-purple-300 dark:border-purple-700" />
-          <div className="mt-2 flex justify-center">
-            <button
-              onClick={async () => {
-                if (localVideoRef.current && localVideoRef.current.srcObject) {
-                  const stream = localVideoRef.current.srcObject;
-                  const videoTrack = stream.getVideoTracks()[0];
-                  if (videoTrack) {
-                    videoTrack.enabled = !videoTrack.enabled;
+          <div className="bg-white dark:bg-gray-700 p-4 rounded-lg shadow-md">
+            <h2 className="font-semibold mb-2 text-gray-900 dark:text-white">Local Video</h2>
+            <video ref={localVideoRef} autoPlay muted className="w-full h-48 object-cover rounded border border-gray-300 dark:border-gray-600" />
+            <div className="mt-2 flex justify-center">
+              <button
+                onClick={async () => {
+                  if (localVideoRef.current && localVideoRef.current.srcObject) {
+                    const stream = localVideoRef.current.srcObject;
+                    const videoTrack = stream.getVideoTracks()[0];
+                    if (videoTrack) {
+                      videoTrack.enabled = !videoTrack.enabled;
+                    }
                   }
-                }
-              }}
-              className="bg-purple-600 hover:bg-purple-700 text-white text-sm px-3 py-1 rounded"
-            >
-              Toggle Camera
-            </button>
+                }}
+                className="bg-green-600 hover:bg-green-700 text-white text-sm px-3 py-1 rounded"
+              >
+                Toggle Camera
+              </button>
+            </div>
           </div>
-        </div>
-        <div className="bg-white dark:bg-purple-900 p-4 rounded-lg shadow-md">
-          <h2 className="font-semibold mb-2 text-purple-900 dark:text-purple-200">Remote Video</h2>
-          <video ref={remoteVideoRef} autoPlay className="w-full h-48 object-cover rounded border border-purple-300 dark:border-purple-700" />
-        </div>
+          <div className="bg-white dark:bg-gray-700 p-4 rounded-lg shadow-md">
+            <h2 className="font-semibold mb-2 text-gray-900 dark:text-white">Remote Video</h2>
+            <video ref={remoteVideoRef} autoPlay className="w-full h-48 object-cover rounded border border-gray-300 dark:border-gray-600" />
+          </div>
       </div>
 
       {/* Status and Controls */}
-      <div className="bg-purple-100 dark:bg-purple-800 p-4 rounded-lg mb-6 shadow-inner border border-purple-300 dark:border-purple-700">
-        <p className="mb-4 text-purple-900 dark:text-purple-200"><strong>Status:</strong> {callStatus}</p>
+      <div className="bg-gray-100 dark:bg-gray-700 p-4 rounded-lg mb-6 shadow-inner border border-gray-300 dark:border-gray-600">
+        <p className="mb-4 text-gray-900 dark:text-white"><strong>Status:</strong> {callStatus}</p>
         <div className="flex flex-wrap gap-3">
           <button
-            className="bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded"
+            className="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded"
             onClick={startCall}
           >
             Start Call
@@ -125,7 +125,7 @@ function LiveCalls() {
 
       {/* Live Calls & SOS Section - Horizontal Layout */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div className="bg-green-100 dark:bg-green-900 p-4 rounded-lg shadow-md border border-green-300 dark:border-green-700">
+        <div className="bg-green-100 dark:bg-green-800 p-4 rounded-lg shadow-md border border-green-300 dark:border-green-700">
           <h3 className="text-xl font-semibold mb-2 text-green-800 dark:text-green-200">Live Sign-to-Sign Calls</h3>
           <p className="mb-4 text-green-700 dark:text-green-300">Connect with certified interpreters for real-time communication.</p>
           <button
