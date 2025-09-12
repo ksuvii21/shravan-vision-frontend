@@ -3,7 +3,7 @@ import React from 'react';
 function ARLearning() {
   return (
     <div className="p-8 max-w-4xl mx-auto">
-      <h1 className="text-4xl font-bold mb-8 text-center">Gamified AR Learning</h1>
+      <h1 className="text-4xl font-bold mb-8 text-center text-gray-900 dark:text-gray-200">Gamified AR Learning</h1>
 
       <section className="mb-8 p-6 border border-gray-300 dark:border-gray-700 rounded bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white">
         <h2 className="text-2xl font-semibold mb-4">AR Practice Session</h2>

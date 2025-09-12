@@ -1,58 +1,24 @@
-# UI Professionalization Plan for Shravan Vision
+# Fix Cross-Browser and Responsive Design Issues
 
-## Tasks to Complete
+## Task: Ensure consistent views between mobile/PC and across different browsers
 
-### 1. Update Color Scheme
-- [x] Modify `tailwind.config.js` to use more professional colors (reduce pink, add educational blues/greens)
-- [x] Update accent colors to be more suitable for ISL educational platform
+### Steps to Complete:
+1. **Analyze Navbar Component** - Review responsive design and identify inconsistencies
+2. **Fix Navbar Mobile Menu** - Ensure dropdown positioning and behavior is consistent
+3. **Fix Bottom Navigation Bar** - Adjust fixed positioning and z-index for proper layering
+4. **Review Page Components** - Check Home, Accessibility, and ARLearning for responsive issues
+5. **Add Browser Compatibility** - Ensure styles work consistently across Chrome, Firefox, Safari, Edge
+6. **Test and Verify** - Check on multiple devices and browsers
 
-### 2. Improve Typography
-- [x] Enhance font sizes, weights, and spacing in `src/index.css`
-- [x] Add better text hierarchy classes
+### Current Issues Identified:
+- Mobile bottom navigation bar may overlap content
+- Dropdown menu positioning might vary across browsers
+- Gradient text and background effects may render differently
+- Box shadows and border-radius may have inconsistencies
+- Transform and transition effects may need vendor prefixes
 
-### 3. Enhance Card Designs
-- [x] Update card styles with better shadows and hover effects
-- [x] Improve layout and spacing in feature cards
-
-### 4. Redesign Hero Section
-- [x] Make hero more engaging with better visuals and layout
-- [x] Add professional elements like call-to-action buttons
-
-### 5. Add Professional Elements
-- [x] Add stats section showing impact
-- [x] Include testimonials or user feedback section
-- [x] Add course preview or learning modules showcase
-
-### 6. Improve Responsiveness
-- [ ] Test and enhance mobile experience
-- [ ] Optimize layouts for different screen sizes
-
-### 7. Update Navbar/Footer
-- [x] Make navigation cleaner and more professional
-- [x] Redesign footer with better organization
-
-### 8. Add Visual Elements
-- [ ] Incorporate more icons and visual cues
-- [ ] Improve gradients and backgrounds
-- [ ] Add subtle animations and transitions
-
-### 9. Fix Text Visibility Issues
-- [x] Fix light mode text colors that are too light and become invisible
-- [x] Fix dark mode text colors that are too dark and become invisible
-- [x] Ensure proper contrast in both light and dark modes across all components
-- [x] Updated LiveCalls.jsx and Translation.jsx with proper text colors
-
-## Files to Edit
-- `src/index.css`
-- `tailwind.config.js`
-- `src/App.jsx`
-- `src/components/Navbar.jsx`
-- `src/components/Footer.jsx`
-- `src/pages/Home.jsx`
-- `src/pages/LiveCalls.jsx`
-
-## Followup Steps
-- [ ] Test responsiveness across devices
-- [ ] Verify dark mode compatibility and text visibility
-- [ ] Check accessibility features
-- [ ] Performance optimization
+### Files to Modify:
+- src/components/Navbar.jsx
+- src/pages/Home.jsx
+- src/pages/Accessibility.jsx
+- src/pages/ARLearning.jsx

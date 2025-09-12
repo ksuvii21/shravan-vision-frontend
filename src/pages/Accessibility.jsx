@@ -36,7 +36,8 @@ function Accessibility() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="bg-white dark:bg-purple-900 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-purple-300 dark:border-purple-700"
+            whileHover={{ scale: 1.05 }}
+            className="bg-white dark:bg-purple-900 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-purple-300 dark:border-purple-700 cursor-pointer"
           >
             <div className="w-12 h-12 bg-blue-200 dark:bg-blue-800 rounded-lg flex items-center justify-center mb-4">
               <span className="text-2xl">🤖</span>
@@ -51,7 +52,8 @@ function Accessibility() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="bg-white dark:bg-green-900 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-green-300 dark:border-green-700"
+            whileHover={{ scale: 1.05 }}
+            className="bg-white dark:bg-green-900 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-green-300 dark:border-green-700 cursor-pointer"
           >
             <div className="w-12 h-12 bg-green-200 dark:bg-green-800 rounded-lg flex items-center justify-center mb-4">
               <span className="text-2xl">📹</span>
@@ -66,7 +68,8 @@ function Accessibility() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="bg-white dark:bg-purple-900 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-purple-300 dark:border-purple-700"
+            whileHover={{ scale: 1.05 }}
+            className="bg-white dark:bg-purple-900 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-purple-300 dark:border-purple-700 cursor-pointer"
           >
             <div className="w-12 h-12 bg-purple-200 dark:bg-purple-800 rounded-lg flex items-center justify-center mb-4">
               <span className="text-2xl">🎓</span>
@@ -81,7 +84,8 @@ function Accessibility() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="bg-white dark:bg-yellow-900 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-yellow-300 dark:border-yellow-700"
+            whileHover={{ scale: 1.05 }}
+            className="bg-white dark:bg-yellow-900 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-yellow-300 dark:border-yellow-700 cursor-pointer"
           >
             <div className="w-12 h-12 bg-yellow-200 dark:bg-yellow-800 rounded-lg flex items-center justify-center mb-4">
               <span className="text-2xl">⚙️</span>
@@ -96,7 +100,8 @@ function Accessibility() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="bg-white dark:bg-red-900 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-red-300 dark:border-red-700"
+            whileHover={{ scale: 1.05 }}
+            className="bg-white dark:bg-red-900 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-red-300 dark:border-red-700 cursor-pointer"
           >
             <div className="w-12 h-12 bg-red-200 dark:bg-red-800 rounded-lg flex items-center justify-center mb-4">
               <span className="text-2xl">🚨</span>
@@ -111,7 +116,8 @@ function Accessibility() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="bg-white dark:bg-teal-900 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-teal-300 dark:border-teal-700"
+            whileHover={{ scale: 1.05 }}
+            className="bg-white dark:bg-teal-900 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-teal-300 dark:border-teal-700 cursor-pointer"
           >
             <div className="w-12 h-12 bg-teal-200 dark:bg-teal-800 rounded-lg flex items-center justify-center mb-4">
               <span className="text-2xl">📱</span>

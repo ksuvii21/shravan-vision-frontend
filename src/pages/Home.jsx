@@ -54,7 +54,7 @@ function Home() {
       <section className="relative bg-gradient-to-r from-primary-700 to-primary-900 dark:from-primary-800 dark:via-primary-900 dark:to-secondary-900 text-white py-24 px-6 text-center rounded-xl overflow-hidden">
         <div className="absolute inset-0 bg-pattern opacity-15"></div>
         <motion.div variants={itemVariants} className="relative max-w-4xl mx-auto">
-          <h1 className="text-display font-extrabold mb-6">Shravan Vision</h1>
+          <h1 className="text-display font-extrabold mb-6 text-gray-900 dark:text-white">Shravan Vision</h1>
           <p className="text-headline mb-4">Bridging Communication Between ISL & Spoken Languages</p>
           <p className="text-body-large max-w-3xl mx-auto mb-10">
             Embodying innovation, inclusivity, and accessibility for seamless interactions in educational and emergency contexts.
@@ -176,7 +176,7 @@ function Home() {
         variants={itemVariants}
         className="py-12 px-6 my-12 bg-gray-100 dark:bg-gray-800 rounded-xl shadow-lg max-w-6xl mx-auto"
       >
-        <h2 className="text-title font-bold mb-8 text-center">Why Choose Shravan Vision?</h2>
+        <h2 className="text-title font-bold mb-8 text-center text-gray-900 dark:text-white">Why Choose Shravan Vision?</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           <div className="bg-white dark:bg-gray-700 p-8 rounded-lg shadow-md">
             <h3 className="text-xl font-semibold mb-4 text-secondary-600 dark:text-secondary-400">Accessibility First</h3>
@@ -202,7 +202,7 @@ function Home() {
         variants={itemVariants}
         className="py-16 px-6 max-w-6xl mx-auto"
       >
-        <h2 className="text-title font-bold mb-8 text-center">What Our Users Say</h2>
+        <h2 className="text-title font-bold mb-8 text-center text-gray-900 dark:text-white">What Our Users Say</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md">
             <p className="text-body italic">"Shravan Vision has transformed how I communicate with my family. The real-time translation is incredible!"</p>
@@ -224,7 +224,7 @@ function Home() {
         variants={itemVariants}
         className="py-16 px-6 bg-gradient-to-r from-primary-50 to-secondary-50 dark:from-gray-800 dark:to-gray-700 rounded-xl shadow-lg max-w-6xl mx-auto"
       >
-        <h2 className="text-title font-bold mb-10 text-center">Our Impact</h2>
+        <h2 className="text-title font-bold mb-10 text-center text-gray-900 dark:text-white">Our Impact</h2>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="text-center">
             <div className="text-display font-bold text-primary-600 dark:text-primary-400">10K+</div>

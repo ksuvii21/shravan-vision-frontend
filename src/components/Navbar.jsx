@@ -83,6 +83,7 @@ export default function Navbar() {
     { name: 'Accessibility', path: '/accessibility' },
     { name: 'About & Impact', path: '/aboutimpact' },
     { name: 'Contact', path: '/contact' },
+    { name: user ? 'Logout' : 'Login', path: user ? null : '/login', action: user ? 'logout' : null },
   ]
 
   const handleNavClick = (path) => {
@@ -95,7 +96,7 @@ export default function Navbar() {
         <div className="flex justify-between h-16">
           <div className="flex">
             <motion.div
-              className="flex-shrink-0 flex items-center font-bold text-xl text-primary-600 dark:text-primary-400"
+              className="flex-shrink-0 flex items-center font-extrabold text-2xl bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 dark:from-blue-400 dark:via-purple-400 dark:to-pink-400 bg-clip-text text-transparent"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
@@ -175,7 +176,7 @@ export default function Navbar() {
 
       {/* Mobile tab bar */}
       <div className="fixed bottom-0 left-0 right-0 bg-white dark:bg-gray-900 shadow-inner border-t border-gray-200 dark:border-gray-700 md:hidden z-50">
-        <div className="flex justify-around items-center">
+        <div className="flex justify-around items-center max-w-md mx-auto">
           {bottomNavItems.map((item) => (
             <button
               key={item.name}
@@ -217,11 +218,18 @@ export default function Navbar() {
                 {dropdownItems.map((item) => (
                   <button
                     key={item.name}
-                    onClick={() => {
-                      handleNavClick(item.path)
-                      setIsMenuOpen(false)
+                    onClick={async () => {
+                      if (item.action === 'logout') {
+                        await logout();
+                        navigate('/login');
+                      } else if (item.path) {
+                        handleNavClick(item.path);
+                      }
+                      setIsMenuOpen(false);
                     }}
-                  className={`block w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-primary-100 dark:hover:bg-primary-900/40 hover:text-primary-700 dark:hover:text-primary-300 transition-colors duration-300 ease-in-out`}
+                    className={`block w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-primary-100 dark:hover:bg-primary-900/40 hover:text-primary-700 dark:hover:text-primary-300 transition-colors duration-300 ease-in-out ${
+                      item.action === 'logout' ? 'text-red-600 dark:text-red-400' : ''
+                    }`}
                   >
                     {item.name}
                   </button>
