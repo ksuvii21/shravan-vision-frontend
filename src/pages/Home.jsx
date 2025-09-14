@@ -51,12 +51,12 @@ function Home() {
       </Helmet>
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-primary-700 to-primary-900 dark:from-primary-800 dark:via-primary-900 dark:to-secondary-900 text-white py-24 px-6 text-center rounded-xl overflow-hidden">
+      <section className="relative bg-gradient-to-r from-primary-50 to-primary-100 dark:from-primary-800 dark:via-primary-900 dark:to-secondary-900 text-gray-900 dark:text-white py-24 px-6 text-center rounded-xl overflow-hidden">
         <div className="absolute inset-0 bg-pattern opacity-15"></div>
         <motion.div variants={itemVariants} className="relative max-w-4xl mx-auto">
           <h1 className="text-display font-extrabold mb-6 text-gray-900 dark:text-white">Shravan Vision</h1>
-          <p className="text-headline mb-4">Bridging Communication Between ISL & Spoken Languages</p>
-          <p className="text-body-large max-w-3xl mx-auto mb-10">
+          <p className="text-headline mb-4 text-gray-800 dark:text-gray-200">Bridging Communication Between ISL & Spoken Languages</p>
+          <p className="text-body-large max-w-3xl mx-auto mb-10 text-gray-700 dark:text-gray-300">
             Embodying innovation, inclusivity, and accessibility for seamless interactions in educational and emergency contexts.
           </p>
           <motion.button
@@ -180,19 +180,19 @@ function Home() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           <div className="bg-white dark:bg-gray-700 p-8 rounded-lg shadow-md">
             <h3 className="text-xl font-semibold mb-4 text-secondary-600 dark:text-secondary-400">Accessibility First</h3>
-            <p className="text-body">Designed with universal accessibility principles to ensure everyone can use our platform regardless of ability.</p>
+          <p className="text-body">Designed with universal accessibility principles to ensure everyone can use our platform regardless of ability.</p>
           </div>
           <div className="bg-white dark:bg-gray-700 p-8 rounded-lg shadow-md">
             <h3 className="text-xl font-semibold mb-4 text-secondary-600 dark:text-secondary-400">AI-Powered</h3>
-            <p className="text-body">Cutting-edge artificial intelligence that continually improves translation accuracy through machine learning.</p>
+          <p className="text-body">Cutting-edge artificial intelligence that continually improves translation accuracy through machine learning.</p>
           </div>
           <div className="bg-white dark:bg-gray-700 p-8 rounded-lg shadow-md">
             <h3 className="text-xl font-semibold mb-4 text-secondary-600 dark:text-secondary-400">Community Driven</h3>
-            <p className="text-body">Developed in partnership with the deaf community to ensure authentic representation and practical solutions.</p>
+          <p className="text-body">Developed in partnership with the deaf community to ensure authentic representation and practical solutions.</p>
           </div>
           <div className="bg-white dark:bg-gray-700 p-8 rounded-lg shadow-md">
             <h3 className="text-xl font-semibold mb-4 text-secondary-600 dark:text-secondary-400">Multi-Platform</h3>
-            <p className="text-body">Available across web, mobile, and specialized devices to provide communication solutions everywhere.</p>
+          <p className="text-body">Available across web, mobile, and specialized devices to provide communication solutions everywhere.</p>
           </div>
         </div>
       </motion.section>
