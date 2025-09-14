@@ -98,8 +98,8 @@ function Home() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 5.636l-1.414 1.414M12 2v4M5.636 5.636L7.05 7.05M2 12h4m12 0h4m-2.05-4.95l1.414 1.414M12 18v4m-4.95-2.05l1.414-1.414M6 12a6 6 0 1112 0 6 6 0 01-12 0z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold mb-4">Emergency SOS</h3>
-              <p className="text-body">
+              <h3 className="text-xl font-semibold mb-4 text-red-600 dark:text-red-400">Emergency SOS</h3>
+              <p className="text-body text-gray-900 dark:text-white">
                 Quick gesture-based emergency alert for immediate assistance. Connects to emergency services, notifies contacts, and provides location tracking for rapid response in critical situations.
               </p>
             </div>
@@ -142,8 +142,8 @@ function Home() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold mb-4">Real-time ISL Translation</h3>
-              <p className="text-body">Access bi-directional ISL↔English/Hindi translations instantly.</p>
+              <h3 className="text-xl font-semibold mb-4 text-primary-600 dark:text-primary-400">Real-time ISL Translation</h3>
+              <p className="text-body text-gray-900 dark:text-white">Access bi-directional ISL↔English/Hindi translations instantly.</p>
             </div>
             <button className="mt-6 bg-primary-600 hover:bg-primary-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors">
               Get Started
@@ -161,8 +161,8 @@ function Home() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold mb-4">AR Learning</h3>
-              <p className="text-body">Learn sign language through gamified augmented reality.</p>
+              <h3 className="text-xl font-semibold mb-4 text-secondary-600 dark:text-secondary-400">AR Learning</h3>
+              <p className="text-body text-gray-900 dark:text-white">Learn sign language through gamified augmented reality.</p>
             </div>
             <button className="mt-6 bg-secondary-600 hover:bg-secondary-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors">
               Learn Now
@@ -179,20 +179,20 @@ function Home() {
         <h2 className="text-title font-bold mb-8 text-center text-gray-900 dark:text-white">Why Choose Shravan Vision?</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           <div className="bg-white dark:bg-gray-700 p-8 rounded-lg shadow-md">
-            <h3 className="text-xl font-semibold mb-4 text-secondary-600 dark:text-secondary-400">Accessibility First</h3>
-          <p className="text-body">Designed with universal accessibility principles to ensure everyone can use our platform regardless of ability.</p>
+            <h3 className="text-xl font-semibold mb-4 text-green-700 dark:text-green-400">Accessibility First</h3>
+          <p className="text-body text-gray-900 dark:text-gray-100">Designed with universal accessibility principles to ensure everyone can use our platform regardless of ability.</p>
           </div>
           <div className="bg-white dark:bg-gray-700 p-8 rounded-lg shadow-md">
-            <h3 className="text-xl font-semibold mb-4 text-secondary-600 dark:text-secondary-400">AI-Powered</h3>
-          <p className="text-body">Cutting-edge artificial intelligence that continually improves translation accuracy through machine learning.</p>
+            <h3 className="text-xl font-semibold mb-4 text-green-700 dark:text-green-400">AI-Powered</h3>
+          <p className="text-body text-gray-900 dark:text-gray-100">Cutting-edge artificial intelligence that continually improves translation accuracy through machine learning.</p>
           </div>
           <div className="bg-white dark:bg-gray-700 p-8 rounded-lg shadow-md">
-            <h3 className="text-xl font-semibold mb-4 text-secondary-600 dark:text-secondary-400">Community Driven</h3>
-          <p className="text-body">Developed in partnership with the deaf community to ensure authentic representation and practical solutions.</p>
+            <h3 className="text-xl font-semibold mb-4 text-green-700 dark:text-green-400">Community Driven</h3>
+          <p className="text-body text-gray-900 dark:text-gray-100">Developed in partnership with the deaf community to ensure authentic representation and practical solutions.</p>
           </div>
           <div className="bg-white dark:bg-gray-700 p-8 rounded-lg shadow-md">
-            <h3 className="text-xl font-semibold mb-4 text-secondary-600 dark:text-secondary-400">Multi-Platform</h3>
-          <p className="text-body">Available across web, mobile, and specialized devices to provide communication solutions everywhere.</p>
+            <h3 className="text-xl font-semibold mb-4 text-green-700 dark:text-green-400">Multi-Platform</h3>
+          <p className="text-body text-gray-900 dark:text-gray-100">Available across web, mobile, and specialized devices to provide communication solutions everywhere.</p>
           </div>
         </div>
       </motion.section>
