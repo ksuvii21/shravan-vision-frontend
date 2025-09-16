@@ -133,7 +133,8 @@ function App() {
         <Footer />
 
         {/* Fixed Theme Toggle Button */}
-        <motion.button
+        {/* Removed the fixed theme toggle button on the top right as per user request */}
+        {/* <motion.button
           onClick={toggleDarkMode}
           className="fixed top-4 right-4 z-50 p-3 rounded-full bg-primary-600 hover:bg-primary-700 text-white shadow-lg transition-all duration-300"
           aria-label="Toggle Dark Mode"
@@ -149,7 +150,7 @@ function App() {
               <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
             </svg>
           )}
-        </motion.button>
+        </motion.button> */}
       </div>
     </Router>
   )

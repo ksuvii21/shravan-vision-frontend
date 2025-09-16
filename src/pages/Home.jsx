@@ -34,14 +34,7 @@ function Home() {
 
       {/* Hero Section */}
       <section className="hero-bg" id="home">
-        <div className="accessibility-animations">
-          <div className="sign-language-character" aria-hidden="true">
-            🤟
-          </div>
-          <div className="vision-eye" aria-hidden="true">
-            👁
-          </div>
-        </div>
+        {/* Removed floating emojis container */}
 
         {/* Floating particles for visual appeal */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -60,8 +53,28 @@ function Home() {
             <h1 className="text-display font-extrabold mb-6 bg-gradient-to-r from-primary-600 via-secondary-600 to-accent text-transparent bg-clip-text animate-slide-in drop-shadow-lg">
               Empowering Accessibility Through Technology
             </h1>
-            <p className="text-headline mb-8 text-gray-700 dark:text-gray-200 animate-slide-in delay-200 leading-relaxed">
-              Breaking barriers and creating inclusive experiences for visually impaired and hearing-impaired individuals through innovative AR learning and assistive technologies.
+            <p className="text-headline mb-8 text-gray-700 dark:text-gray-200 animate-slide-in delay-200 leading-relaxed flex items-center justify-between">
+              <motion.span
+                className="inline-emoji-left"
+                aria-hidden="true"
+                style={{ fontSize: '3rem', marginRight: '0.5rem', display: 'inline-block' }}
+                animate={{ rotate: [0, 15, -15, 15, 0] }}
+                transition={{ repeat: Infinity, duration: 4, ease: 'easeInOut' }}
+              >
+                🤟
+              </motion.span>
+              <span className="flex-grow">
+                Breaking barriers and creating inclusive experiences for visually impaired and hearing-impaired individuals through innovative AR learning and assistive technologies.
+              </span>
+              <motion.span
+                className="inline-emoji-right"
+                aria-hidden="true"
+                style={{ fontSize: '3rem', marginLeft: '0.5rem', display: 'inline-block' }}
+                animate={{ scale: [1, 1.2, 1, 1.2, 1] }}
+                transition={{ repeat: Infinity, duration: 3, ease: 'easeInOut' }}
+              >
+                👁
+              </motion.span>
             </p>
 
             <div className="cta-buttons flex justify-center gap-6 flex-wrap animate-slide-in delay-400">
