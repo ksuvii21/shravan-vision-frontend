@@ -10,7 +10,7 @@ function Login() {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
-  const { login, ADMIN_CREDENTIALS, USER_CREDENTIALS } = useAuth();
+  const { login, ADMIN_CREDENTIALS, USER_CREDENTIALS, isAdmin } = useAuth();
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -21,8 +21,12 @@ function Login() {
     const result = await login(email, password);
 
     if (result.success) {
-      // Redirect based on user role (will be handled by AuthContext)
-      navigate('/');
+      // Check admin credentials explicitly to ensure correct redirection
+      if (email === ADMIN_CREDENTIALS.email && password === ADMIN_CREDENTIALS.password) {
+        navigate('/adminpanel');
+      } else {
+        navigate('/');
+      }
     } else {
       setError(result.error || 'Login failed');
     }

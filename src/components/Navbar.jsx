@@ -82,6 +82,7 @@ export default function Navbar() {
   const dropdownItems = [
     { name: 'Accessibility', path: '/accessibility' },
     { name: 'About & Impact', path: '/aboutimpact' },
+    ...(isAdmin() ? [{ name: 'Admin Panel', path: '/adminpanel' }] : []),
     { name: 'Contact', path: '/contact' },
     { name: user ? 'Logout' : 'Login', path: user ? null : '/login', action: user ? 'logout' : null },
   ]
