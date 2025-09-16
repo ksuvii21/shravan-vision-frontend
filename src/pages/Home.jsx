@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+ import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { useState } from 'react';
@@ -39,35 +39,69 @@ function Home() {
       initial="hidden"
       animate="visible"
       exit="exit"
+      className="min-h-screen bg-gradient-to-br from-blue-50 via-green-50 to-blue-100 dark:from-blue-900 dark:via-green-900 dark:to-blue-900 text-gray-900 dark:text-white"
     >
       <Helmet>
-        <title>Shravan Vision | Bridging Communication Between ISL & Spoken Languages</title>
-        <meta name="description" content="Shravan Vision is an AI-powered platform for real-time Indian Sign Language translation, video calls, and accessibility features. Bridging communication gaps between deaf and hearing communities." />
-        <meta name="keywords" content="Indian Sign Language, ISL, accessibility, deaf community, translation app, sign language learning, AR learning" />
-        <meta property="og:title" content="Shravan Vision | ISL Translation Platform" />
-        <meta property="og:description" content="AI-powered Indian Sign Language translation and accessibility platform." />
+        <title>Shravan Vision - Empowering Accessibility</title>
+        <meta name="description" content="Breaking barriers and creating inclusive experiences for visually impaired and hearing-impaired individuals through innovative AR learning and assistive technologies." />
+        <meta name="keywords" content="accessibility, AR learning, sign language, vision assistance, audio feedback, universal design" />
+        <meta property="og:title" content="Shravan Vision - Empowering Accessibility" />
+        <meta property="og:description" content="Innovative AR learning and assistive technologies for accessibility." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://shravan-vision-16.netlify.app/" />
       </Helmet>
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-primary-50 to-primary-100 dark:from-primary-800 dark:via-primary-900 dark:to-secondary-900 text-gray-900 dark:text-white py-24 px-6 text-center rounded-xl overflow-hidden">
-        <div className="absolute inset-0 bg-pattern opacity-15"></div>
-        <motion.div variants={itemVariants} className="relative max-w-4xl mx-auto">
-          <h1 className="text-display font-extrabold mb-6 text-gray-900 dark:text-white">Shravan Vision</h1>
-          <p className="text-headline mb-4 text-gray-800 dark:text-gray-200">Bridging Communication Between ISL & Spoken Languages</p>
-          <p className="text-body-large max-w-3xl mx-auto mb-10 text-gray-700 dark:text-gray-300">
-            Embodying innovation, inclusivity, and accessibility for seamless interactions in educational and emergency contexts.
-          </p>
-          <motion.button
-            onClick={() => navigate('/translation')}
-            className="bg-secondary-600 hover:bg-secondary-700 text-white font-semibold py-4 px-8 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+      <section className="hero-bg" id="home">
+        <div className="accessibility-animations">
+          <div className="sign-language-character" aria-hidden="true">🤟</div>
+          <div className="vision-eye" aria-hidden="true">👁</div>
+        </div>
+
+        {/* Floating particles for visual appeal */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-primary-400 rounded-full opacity-60 animate-pulse"></div>
+          <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-secondary-400 rounded-full opacity-40 animate-pulse delay-1000"></div>
+          <div className="absolute bottom-1/4 left-1/3 w-3 h-3 bg-accent rounded-full opacity-50 animate-pulse delay-500"></div>
+          <div className="absolute top-1/2 right-1/4 w-1.5 h-1.5 bg-primary-300 rounded-full opacity-70 animate-pulse delay-1500"></div>
+        </div>
+
+        <div className="hero-content max-w-5xl mx-auto relative z-10 px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            Try the Demo
-          </motion.button>
-        </motion.div>
+            <h1 className="text-display font-extrabold mb-6 bg-gradient-to-r from-primary-600 via-secondary-600 to-accent text-transparent bg-clip-text animate-slide-in drop-shadow-lg">
+              Empowering Accessibility Through Technology
+            </h1>
+            <p className="text-headline mb-8 text-gray-700 dark:text-gray-200 animate-slide-in delay-200 leading-relaxed">
+              Breaking barriers and creating inclusive experiences for visually impaired and hearing-impaired individuals through innovative AR learning and assistive technologies.
+            </p>
+
+
+
+            <div className="cta-buttons flex justify-center gap-6 flex-wrap animate-slide-in delay-400">
+              <motion.button
+                onClick={() => navigate('/accessibility')}
+                className="btn btn-primary text-lg px-8 py-4 shadow-2xl hover:shadow-primary-500/25"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Explore Features
+                <span className="ml-2">→</span>
+              </motion.button>
+              <motion.button
+                onClick={() => navigate('/arlearning')}
+                className="btn btn-secondary text-lg px-8 py-4 border-2 hover:bg-secondary-600 hover:text-white transition-all duration-300"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Try AR Learning
+              </motion.button>
+            </div>
+          </motion.div>
+        </div>
       </section>
 
       {/* Mission Section */}
@@ -86,7 +120,7 @@ function Home() {
         variants={itemVariants}
         className="py-16 px-6 text-center font-sans bg-white dark:bg-gray-900 text-gray-900 dark:text-white rounded-xl shadow-lg max-w-6xl mx-auto"
       >
-        <h2 className="text-title font-bold mb-10">Key Features</h2>
+        <h2 className="text-title font-bold mb-10 text-gray-900 dark:text-white">Key Features</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
           <motion.div
             className="cursor-pointer p-8 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-md hover:shadow-2xl transition-all duration-300 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white flex flex-col h-full"

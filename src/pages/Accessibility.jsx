@@ -8,7 +8,7 @@ function Accessibility() {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.5 }}
-      className="min-h-screen p-6 bg-gradient-to-br from-purple-50 via-pink-50 to-yellow-100 dark:from-purple-900 dark:via-pink-900 dark:to-yellow-900 text-gray-900 dark:text-white"
+      className="min-h-screen p-6 bg-gradient-to-br from-blue-50 via-green-50 to-blue-100 dark:from-blue-900 dark:via-green-900 dark:to-blue-900 text-gray-900 dark:text-white"
     >
       <Helmet>
         <title>Accessibility Features | Shravan Vision</title>
@@ -36,8 +36,9 @@ function Accessibility() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ scale: 1.1, boxShadow: '0 0 15px rgba(59, 130, 246, 0.7)' }}
             className="bg-white dark:bg-purple-900 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-purple-300 dark:border-purple-700 cursor-pointer"
+            onClick={() => window.location.href = '/translation'}
           >
             <div className="w-12 h-12 bg-blue-200 dark:bg-blue-800 rounded-lg flex items-center justify-center mb-4">
               <span className="text-2xl">🤖</span>
@@ -52,8 +53,9 @@ function Accessibility() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ scale: 1.1, boxShadow: '0 0 15px rgba(34, 197, 94, 0.7)' }}
             className="bg-white dark:bg-green-900 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-green-300 dark:border-green-700 cursor-pointer"
+            onClick={() => window.location.href = '/livecalls'}
           >
             <div className="w-12 h-12 bg-green-200 dark:bg-green-800 rounded-lg flex items-center justify-center mb-4">
               <span className="text-2xl">📹</span>
@@ -68,8 +70,9 @@ function Accessibility() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ scale: 1.1, boxShadow: '0 0 15px rgba(139, 92, 246, 0.7)' }}
             className="bg-white dark:bg-purple-900 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-purple-300 dark:border-purple-700 cursor-pointer"
+            onClick={() => window.location.href = '/arlearning'}
           >
             <div className="w-12 h-12 bg-purple-200 dark:bg-purple-800 rounded-lg flex items-center justify-center mb-4">
               <span className="text-2xl">🎓</span>
@@ -84,8 +87,9 @@ function Accessibility() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ scale: 1.1, boxShadow: '0 0 15px rgba(202, 138, 4, 0.7)' }}
             className="bg-white dark:bg-yellow-900 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-yellow-300 dark:border-yellow-700 cursor-pointer"
+            onClick={() => window.location.href = '/customizableui'}
           >
             <div className="w-12 h-12 bg-yellow-200 dark:bg-yellow-800 rounded-lg flex items-center justify-center mb-4">
               <span className="text-2xl">⚙️</span>
@@ -100,8 +104,9 @@ function Accessibility() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ scale: 1.1, boxShadow: '0 0 15px rgba(220, 38, 38, 0.7)' }}
             className="bg-white dark:bg-red-900 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-red-300 dark:border-red-700 cursor-pointer"
+            onClick={() => window.location.href = '/sos'}
           >
             <div className="w-12 h-12 bg-red-200 dark:bg-red-800 rounded-lg flex items-center justify-center mb-4">
               <span className="text-2xl">🚨</span>
@@ -116,8 +121,9 @@ function Accessibility() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ scale: 1.1, boxShadow: '0 0 15px rgba(20, 184, 166, 0.7)' }}
             className="bg-white dark:bg-teal-900 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-teal-300 dark:border-teal-700 cursor-pointer"
+            onClick={() => window.location.href = '/voiceintegration'}
           >
             <div className="w-12 h-12 bg-teal-200 dark:bg-teal-800 rounded-lg flex items-center justify-center mb-4">
               <span className="text-2xl">📱</span>
@@ -194,7 +200,10 @@ function Accessibility() {
           <p className="text-xl mb-6 opacity-90">
             Join thousands of users who have transformed their communication experience with Shravan Vision.
           </p>
-          <button className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300">
+          <button
+            onClick={() => window.location.href = '/login'}
+            className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300"
+          >
             Get Started Today
           </button>
         </motion.div>

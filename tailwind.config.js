@@ -101,6 +101,14 @@ export default {
       fontFamily: {
         sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
       },
+      fontSize: {
+        'display': ['3.5rem', { lineHeight: '1.1', letterSpacing: '-0.02em' }],
+        'title': ['2rem', { lineHeight: '1.3', letterSpacing: '-0.01em' }],
+        'headline': ['1.5rem', { lineHeight: '1.4' }],
+        'body-large': ['1.125rem', { lineHeight: '1.6' }],
+        'body': ['1rem', { lineHeight: '1.6' }],
+        'body-small': ['0.875rem', { lineHeight: '1.5' }],
+      },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in',
         'slide-in': 'slideIn 0.5s ease-out',
