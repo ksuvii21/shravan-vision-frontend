@@ -2,6 +2,52 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Additional custom styles to align with target website look and feel */
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--secondary-color);
+  text-decoration: underline;
+}
+
+button {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, #6b46c1 0%, #805ad5 100%);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.375rem;
+  font-weight: 600;
+  box-shadow: 0 10px 15px -3px rgba(107, 70, 193, 0.5);
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(90deg, #805ad5 0%, #9f7aea 100%);
+}
+
+.container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
 :root {
   font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   line-height: 1.6;
@@ -145,25 +191,25 @@
 
 /* CSS Variables for theming */
 :root {
-  --primary-color: #4f46e5;
-  --secondary-color: #7c3aed;
-  --accent-color: #f59e0b;
-  --text-primary: #1f2937;
-  --text-secondary: #6b7280;
-  --bg-primary: #ffffff;
-  --bg-secondary: #f9fafb;
-  --border-color: #e5e7eb;
-  --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --primary-color: #5a4de8;
+  --secondary-color: #7f5af0;
+  --accent-color: #a855f7;
+  --text-primary: #111827;
+  --text-secondary: #4b5563;
+  --bg-primary: #f9fafb;
+  --bg-secondary: #eef2ff;
+  --border-color: #e0e7ff;
+  --shadow: 0 10px 15px -3px rgba(90, 77, 232, 0.4);
   --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
 }
 
 .dark {
   --text-primary: #f9fafb;
   --text-secondary: #d1d5db;
-  --bg-primary: #111827;
-  --bg-secondary: #1f2937;
+  --bg-primary: #1e293b;
+  --bg-secondary: #1e40af;
   --border-color: #374151;
-  --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+  --shadow: 0 10px 15px -3px rgba(90, 77, 232, 0.6);
 }
 
 /* Global styles */

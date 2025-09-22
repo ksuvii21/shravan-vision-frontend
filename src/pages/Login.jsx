@@ -10,7 +10,7 @@ function Login() {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
-  const { login, ADMIN_CREDENTIALS, USER_CREDENTIALS, isAdmin } = useAuth();
+  const { user, setUser, ADMIN_CREDENTIALS, USER_CREDENTIALS } = useAuth();
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -18,17 +18,24 @@ function Login() {
     setError('');
     setLoading(true);
 
-    const result = await login(email, password);
-
-    if (result.success) {
-      // Check admin credentials explicitly to ensure correct redirection
-      if (email === ADMIN_CREDENTIALS.email && password === ADMIN_CREDENTIALS.password) {
+    // Simple login simulation
+    if (
+      (email === ADMIN_CREDENTIALS.email && password === ADMIN_CREDENTIALS.password) ||
+      (email === USER_CREDENTIALS.email && password === USER_CREDENTIALS.password)
+    ) {
+      const loggedInUser = {
+        id: 1,
+        name: email === ADMIN_CREDENTIALS.email ? 'Admin User' : 'Regular User',
+        isAdmin: email === ADMIN_CREDENTIALS.email,
+      };
+      setUser(loggedInUser);
+      if (loggedInUser.isAdmin) {
         navigate('/adminpanel');
       } else {
         navigate('/');
       }
     } else {
-      setError(result.error || 'Login failed');
+      setError('Invalid email or password');
     }
 
     setLoading(false);
