@@ -15,7 +15,7 @@
 ## Phase 3: Core AR and Animation Components
 - [x] Create ARCore integration component for real-world overlay
 - [x] Implement canvas-based cartoon animation system for ISL signs
-- [ ] Build sign recognition using MediaPipe and TensorFlow.js
+- [x] Build sign recognition using MediaPipe and TensorFlow.js (basic implementation)
 - [x] Create animated feedback system for user input
 
 ## Phase 4: Gamification Systems
