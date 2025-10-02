@@ -25,11 +25,11 @@
 - [x] Add Narrative/Storytelling elements to guide learning
 - [x] Implement Progression and Leveling-Up mechanics
 - [x] Create Challenges and Quests system
-- [ ] Add Social and Collaborative features
+- [x] Add Social and Collaborative features (progress sharing)
 - [ ] Implement Simulation and Role-Playing elements
 - [x] Build Immediate Feedback and Rewards system
 - [x] Create Unlockable Content and Easter Eggs
-- [ ] Add Time-Based and Speed Challenges
+- [x] Add Time-Based and Speed Challenges
 - [ ] Implement Customization and Avatars
 - [x] Integrate Real-World AR elements
 - [ ] Build Adaptive and Personalized learning logic
@@ -38,7 +38,7 @@
 - [ ] Design colorful, theme-based environments
 - [ ] Ensure smooth animations and non-irritating colors
 - [ ] Optimize performance for mobile AR experiences
-- [ ] Add dark mode support for themes
+- [x] Add dark mode support for themes
 
 ## Phase 6: Testing and Optimization
 - [ ] Test AR functionality across devices

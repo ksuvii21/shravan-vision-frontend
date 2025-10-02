@@ -9,6 +9,9 @@ import Leaderboard from '../components/Leaderboard';
 import Challenges from '../components/Challenges';
 import Narrative from '../components/Narrative';
 import SignRecognition from '../components/SignRecognition';
+import DarkModeToggle from '../components/DarkModeToggle';
+import ShareProgress from '../components/ShareProgress';
+import TimeChallenge from '../components/TimeChallenge';
 import { islSigns } from '../data/islSigns';
 
 function ARLearning() {
@@ -45,6 +48,8 @@ function ARLearning() {
         <title>Gamified AR Learning | Shravan Vision</title>
         <meta name="description" content="Interactive augmented reality learning modules for immersive ISL practice." />
       </Helmet>
+
+      <DarkModeToggle />
 
       <div className="max-w-7xl mx-auto">
         <motion.div
@@ -200,11 +205,22 @@ function ARLearning() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8"
+          className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8"
         >
           <Narrative level={level} />
           <Leaderboard />
           <Challenges onChallengeComplete={(id) => console.log('Challenge completed:', id)} />
+          <TimeChallenge onComplete={(score) => setPoints(points + score)} />
+        </motion.div>
+
+        {/* Social Features */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          className="mb-8"
+        >
+          <ShareProgress points={points} level={level} badges={badges} />
         </motion.div>
 
         {/* Call to Action */}
