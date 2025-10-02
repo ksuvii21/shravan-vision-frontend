@@ -1,10 +1,10 @@
 # AR Gamified Learning Platform TODO
 
 ## Phase 1: Setup and Dependencies
-- [ ] Add required dependencies for AR and canvas animations (e.g., @react-three/fiber, three, aframe, canvas libraries)
-- [ ] Update Tailwind config for new theme colors and animations
-- [ ] Update index.css with new CSS variables for colorful themes
-- [ ] Install tailwindcss-animate plugin
+- [x] Add required dependencies for AR and canvas animations (e.g., @react-three/fiber, three, aframe, canvas libraries)
+- [x] Update Tailwind config for new theme colors and animations
+- [x] Update index.css with new CSS variables for colorful themes
+- [x] Install tailwindcss-animate plugin
 
 ## Phase 2: Data Integration
 - [ ] Research and download Kaggle ISL datasets
