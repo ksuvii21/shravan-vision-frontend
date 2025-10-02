@@ -101,6 +101,9 @@ function ARLearning() {
             {mode === 'ar' && (
               <ARPractice sign={currentSign} />
             )}
+            {mode === 'recognition' && (
+              <SignRecognition sign={currentSign} onRecognized={handleCorrect} />
+            )}
           </div>
 
           <div>
