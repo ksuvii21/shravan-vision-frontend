@@ -21,10 +21,10 @@
 ## Phase 4: Gamification Systems
 - [x] Implement Points system with real-time updates
 - [x] Create Badges system with achievement tracking
-- [ ] Build Leaderboards with social features
-- [ ] Add Narrative/Storytelling elements to guide learning
+- [x] Build Leaderboards with social features
+- [x] Add Narrative/Storytelling elements to guide learning
 - [x] Implement Progression and Leveling-Up mechanics
-- [ ] Create Challenges and Quests system
+- [x] Create Challenges and Quests system
 - [ ] Add Social and Collaborative features
 - [ ] Implement Simulation and Role-Playing elements
 - [x] Build Immediate Feedback and Rewards system

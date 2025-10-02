@@ -5,6 +5,10 @@ import CanvasAnimation from '../components/CanvasAnimation';
 import ARPractice from '../components/ARPractice';
 import Gamification from '../components/Gamification';
 import FlashCard from '../components/FlashCard';
+import Leaderboard from '../components/Leaderboard';
+import Challenges from '../components/Challenges';
+import Narrative from '../components/Narrative';
+import SignRecognition from '../components/SignRecognition';
 import { islSigns } from '../data/islSigns';
 
 function ARLearning() {
@@ -12,7 +16,7 @@ function ARLearning() {
   const [points, setPoints] = useState(0);
   const [badges, setBadges] = useState([{ name: 'Beginner', icon: '⭐' }]);
   const [level, setLevel] = useState(1);
-  const [mode, setMode] = useState('flashcard'); // flashcard, ar, canvas
+  const [mode, setMode] = useState('flashcard'); // flashcard, ar, canvas, recognition
   const [progress, setProgress] = useState(0);
 
   const handleCorrect = () => {
@@ -60,7 +64,7 @@ function ARLearning() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
           <div className="lg:col-span-2">
             {/* Mode Selection */}
-            <div className="flex justify-center mb-6">
+            <div className="flex justify-center mb-6 flex-wrap">
               <button
                 onClick={() => setMode('flashcard')}
                 className={`px-4 py-2 rounded-l-lg ${mode === 'flashcard' ? 'bg-primary text-primary-foreground' : 'bg-muted'}`}
@@ -75,9 +79,15 @@ function ARLearning() {
               </button>
               <button
                 onClick={() => setMode('ar')}
-                className={`px-4 py-2 rounded-r-lg ${mode === 'ar' ? 'bg-primary text-primary-foreground' : 'bg-muted'}`}
+                className={`px-4 py-2 ${mode === 'ar' ? 'bg-primary text-primary-foreground' : 'bg-muted'}`}
               >
                 AR Practice
+              </button>
+              <button
+                onClick={() => setMode('recognition')}
+                className={`px-4 py-2 rounded-r-lg ${mode === 'recognition' ? 'bg-primary text-primary-foreground' : 'bg-muted'}`}
+              >
+                Sign Recognition
               </button>
             </div>
 
@@ -180,6 +190,18 @@ function ARLearning() {
               </motion.div>
             ))}
           </div>
+        </motion.div>
+
+        {/* Additional Features */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8"
+        >
+          <Narrative level={level} />
+          <Leaderboard />
+          <Challenges onChallengeComplete={(id) => console.log('Challenge completed:', id)} />
         </motion.div>
 
         {/* Call to Action */}
